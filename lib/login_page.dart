@@ -1,4 +1,7 @@
+import 'package:app_ecommercec_flutter/signup_page.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -60,6 +63,8 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
+                      hintText: "Email",
+                      prefixIcon: Icon(Icons.email,color: Colors.deepOrangeAccent,),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: Colors.white,
@@ -94,6 +99,8 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
+                      hintText: "Password",
+                        prefixIcon: Icon(Icons.password,color: Colors.deepOrangeAccent,),
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                                 color: Colors.white,
@@ -168,7 +175,11 @@ class _LoginPageState extends State<LoginPage> {
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 20
-              ))
+              ),
+              recognizer: TapGestureRecognizer()..onTap=(){
+                Get.to(()=>SignUpPage());
+              }
+              ),
             ]
           ))
         ],
